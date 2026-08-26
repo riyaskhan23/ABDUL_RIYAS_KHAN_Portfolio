@@ -1,0 +1,332 @@
+/* Base Section Setup */
+.skills-section {
+  position: relative;
+  padding: 6rem 1rem;
+  padding-top: 7rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-unique-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-one {
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.glow-two {
+  bottom: 10%;
+  right: 5%;
+  width: 320px;
+  height: 320px;
+  background: rgba(168, 85, 247, 0.18); /* Purple/Indigo twist */
+}
+
+.skills-card {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  padding: 3rem 2rem;
+  overflow: visible;
+}
+
+.skill-floating-badge {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+.badge-code { top: 25px; left: 30px; }
+.badge-stack { top: 25px; right: 30px; animation-delay: 2s; border-color: rgba(168, 85, 247, 0.3); color: #c084fc; }
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.skills-heading-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.skills-main-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  background: linear-gradient(270deg, #38bdf8, #6366f1, #a855f7, #38bdf8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleShimmer 6s ease infinite;
+  display: inline-block;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.skills-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.skills-boxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .skills-boxes-container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}
+
+.skill-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 1rem 1rem;
+  width: 100%;
+  max-width: 520px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-box:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.box-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+}
+
+.skill-icon img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Random Angle/Tilt Layout for Badges */
+.badges-grid-random {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 14px;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Different Random Tilts for Dynamic Look */
+.badge-tilt-0 { transform: rotate(-2deg); }
+.badge-tilt-1 { transform: rotate(3deg); }
+.badge-tilt-2 { transform: rotate(-3.5deg); }
+.badge-tilt-3 { transform: rotate(2deg); }
+
+.skill-badge:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  transform: translateY(-4px) rotate(0deg) scale(1.05);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+}
+
+.skill-icon {
+  font-size: 1rem;
+}
+
+.skills-loading-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.loading-dots span {
+  width: 5px;
+  height: 5px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  animation: dotBlink 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotBlink {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+
+/* Random Floating Badges scattered around the card */
+.skill-floating-badge {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  animation: floatRandom 4.5s ease-in-out infinite;
+}
+
+/* Different placements & delays for a random organic look */
+.badge-random-1 { top: 20px; left: 25px; animation-delay: 0s; }
+.badge-random-2 { top: 35px; right: 35px; animation-delay: 1.2s; border-color: rgba(168, 85, 247, 0.3); color: #c084fc; }
+.badge-random-3 { bottom: 40px; left: 30px; animation-delay: 2.4s; border-color: rgba(52, 211, 153, 0.3); color: #34d399; }
+.badge-random-4 { bottom: 50px; right: 40px; animation-delay: 3.6s; border-color: rgba(244, 63, 94, 0.3); color: #fb7185; }
+.badge-random-5 { top: 50%; left: -15px; animation-delay: 1.8s; display: none; } /* Optional hide on small screens */
+
+@media (min-width: 960px) {
+  .badge-random-5 { display: flex; }
+}
+
+@keyframes floatRandom {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE OPTIMIZATIONS
+   ========================================== */
+@media (max-width: 768px) {
+  /* Reduce outer padding and card width for mobile screens */
+  .skills-section {
+    padding: 3rem 0.5rem;
+  }
+
+  .skills-card {
+    width: 87%;
+    padding: 1.5rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  /* Adjust header size for mobile */
+  .skills-main-title {
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .skills-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Hide floating badges on mobile to prevent overlapping/cluttering */
+  .skill-floating-badge {
+    display: none;
+  }
+
+  /* Stack skill boxes properly */
+  .skills-boxes-container {
+    gap: 1.25rem;
+  }
+
+  .skill-box {
+    padding: 1.25rem 0.75rem;
+    border-radius: 1rem;
+  }
+
+  .box-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Make badges grid compact and remove extreme tilts on mobile */
+  .badges-grid-random {
+    gap: 8px;
+  }
+
+  .skill-badge {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    transform: none !important; /* Disable rotation on mobile for clean look */
+  }
+
+  .skill-icon {
+    font-size: 0.85rem;
+  }
+
+  /* Compact footer */
+  .skills-loading-footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
