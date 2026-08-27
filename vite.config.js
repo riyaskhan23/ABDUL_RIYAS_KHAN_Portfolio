@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: '/ABDUL_RIYAS_KHAN_Portfolio',
+  base: '/ABDUL_RIYAS_KHAN_Portfolio/',
 })
