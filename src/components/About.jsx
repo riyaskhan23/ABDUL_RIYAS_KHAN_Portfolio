@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import MyImg from '/images/riyas-char.png'
 import './About.css'
 
 export default function About() {
@@ -108,7 +109,7 @@ export default function About() {
             <div className="badge-subtitle">Dev & Designer</div>
           </div>
 
-          <img src="/images/riyas-char.png" alt="Abdul Riyas Khan" className="hero-photo" />
+          <img src={MyImg} alt="Abdul Riyas Khan" className="hero-photo" />
         </div>
 
       </div>
